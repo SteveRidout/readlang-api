@@ -229,7 +229,9 @@ $(document).ready(function () {
 							addEmptyContexts();
 						}, 700);
 						draggable.remove();
-						endGame('Well done!');
+						if ($('#words li').length === 0) {
+							endGame('Well done!');
+						}
 					} else {
 						score--;
 						console.log("down score");
