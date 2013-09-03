@@ -1,0 +1,169 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Open Sans";
+
+	background-color: #fff;
+
+	margin: 0;
+	padding: 0;
+
+	font-family: Helvetica, sans-serif;
+}
+
+h1 small {
+	font-style: italic;
+	font-size: 60%;
+}
+
+.centralDialog {
+	position: fixed;
+
+	width: 400px;
+	left: 50%;
+	top: 50%;
+
+	margin-left: -200px;
+	margin-top: -100px;
+
+	padding: 20px;
+
+	background-color: #eef;
+
+	border: 1px solid #ddc;
+
+	border-radius: 4px;
+}
+
+.mainColumn {
+	position: relative;
+
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.mainColumn h3 {
+	margin: 10px 20px;
+}
+
+#header {
+	margin: 0;
+	padding: 15px;
+
+	background-color: #193E8C;
+	color: #eef;
+}
+/*h2#user {
+	position: absolute;
+
+	right: 10px;
+	top: 10px;
+}
+	*/
+#playground {
+	background-color: #fec;
+}
+#contexts {
+	clear: both;
+
+	list-style: none;
+
+	margin: 10px 20px;
+	padding: 0;
+	/*width: 50%;*/
+}
+#contexts li {
+	/*float: left;*/
+	margin: 8px;
+	padding: 4px;
+
+	background-color: #ffeebb;
+
+	border-radius: 4px;
+}
+#contexts li.dropActive {
+	padding: 3px;
+
+	border: 1px dashed #888;
+}
+/*#contexts li.dropHover {
+	background-color: #fe8;
+}*/
+#contexts li.success {
+	background-color: #8f8;
+}
+#contexts li.fail {
+	background-color: #f88;
+}
+
+#contexts li .blank {
+	background-color: #d8d8d8;
+	border: 1px solid #ddd;
+	opacity: 0.5;
+	/*border-bottom: 1px solid #222;*/
+
+	margin: 2px;
+	padding: 2px;
+
+	white-space: nowrap;
+}
+#contexts li.dropHover .blank {
+	background-color: #9f9;
+	border-color: #7d7;
+}
+#contexts li.empty {
+	min-height: 20px;
+}
+#words {
+	/*width: 40%;*/
+	text-align: right;
+
+	list-style: none;
+
+	padding: 5px;
+	margin: 10px 20px;
+
+	line-height: 30px;
+
+	border: 1px solid #e8e8e8;
+
+	background-color: #eee;
+
+	line-height: 
+}
+.word {
+	cursor: move;
+
+/*	top: -5px;*/
+
+	margin: 2px;
+	padding: 2px;
+
+	background-color: #f8f8f8;
+	border: 1px groove #fff;
+
+	border-radius: 5px;
+
+	box-shadow: 2px 2px 5px #888;
+
+	white-space: nowrap;
+}
+
+.word.draggable {
+	display: inline;
+}
+
+#scoreHeader {
+	float: left;
+}
+
+#countdown {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
