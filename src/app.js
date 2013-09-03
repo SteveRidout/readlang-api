@@ -1,8 +1,10 @@
 "use strict";
 
 $(document).ready(function () {
-	var baseURL = "https://readlang.com";
-	var APIKey = "a12345";
+	readlang.setup({
+		baseURL: "https://readlang.com",
+		APIKey: "a12345"
+	});
 
 	var logout = function () {
 		readlang.logout(function () {
@@ -100,7 +102,9 @@ $(document).ready(function () {
 		timer;
 
 	var addWord = function () {
-		if (endGame) {
+		console.log("adding word");
+		if (gameFinished) {
+			console.log("end game");
 			return;
 		}
 
@@ -108,6 +112,7 @@ $(document).ready(function () {
 		if (!userWord) {
 			return;
 		}
+		console.log("add userWord: ", userWord._id);
 		currentWords.push(userWord);
 		currentNotDisplayedWords.push(userWord);
 
@@ -126,10 +131,10 @@ $(document).ready(function () {
 
 	var score = 0;
 	$('#score').text(score);
-	var endGame = false;
+	var gameFinished = false;
 
 	var addEmptyContexts = function () {
-		if (endGame) {
+		if (gameFinished) {
 			return;
 		}
 		var contexts = $('#contexts');
@@ -190,8 +195,8 @@ $(document).ready(function () {
 		};
 
 		countdownTick();
-				
-		endGame = true;
+	
+		gameFinished = true;
 	};
 
 	var addContext = function () {

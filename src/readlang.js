@@ -6,6 +6,11 @@
 
 (function () {
 	var readlang = {};
+
+	var config;
+	readlang.setup = function (_config) {
+		config = _config;
+	};
 	
 	// Authorization access token
 	// --------------------------
@@ -23,7 +28,7 @@
 
 	// Redirects to auth page without warning
 	var requestAuth = function () {
-		window.location.href = baseURL + '/oauth?response_type=token&client_id=a12345' +
+		window.location.href = config.baseURL + '/oauth?response_type=token&client_id=' + config.APIKey +
 			'&redirect_uri=' + encodeURIComponent(window.location.href) + '&scope=words';
 	};
 
@@ -40,7 +45,7 @@
 		options.headers["Authorization"] = "Bearer " + accessToken;
 
 		if (options.path) {
-			options.url = baseURL + options.path;
+			options.url = config.baseURL + options.path;
 		}
 
 		_.defaults(options, {
