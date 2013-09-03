@@ -269,7 +269,7 @@ Report how easy the user recalled the word.
 	
 	POST https://readlang.com/api/userWord/51f8d8e2c480eba4f7afde8b/recall
 
-#### Arguments
+#### Request Body Fields 
 
 - __recallEase__ - A numeric value from 0 to 5:
 	- __0__ - Didn't remember at all
@@ -279,7 +279,7 @@ Report how easy the user recalled the word.
 - __strength__ - A numeric value from 0 to 1 which indicates how reliable this report is. e.g.
 	- __0__ - Pointless - don't use 0, it won't make any difference!
 	- __0.3__ - Weak test, e.g. a very easy multiple choice test
-	- __0.5__ - Medium, e.g. a more tricky multiple choice test
+	- __0.6__ - Medium, e.g. a more tricky multiple choice test
 	- __1__ - Strong test, user must know the word cold with no hint apart from the context sentence
 
 #### Example Request Body
