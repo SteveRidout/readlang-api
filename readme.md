@@ -4,6 +4,12 @@ The API allows you to create web-based apps and games using the words from a use
 
 __The API is currently an early alpha release, so expect changes, and please let me know if anything doesn't work.__
 
+## Example Game - Fill in the Blanks!
+
+Play the game here: [Fill in the Blanks!](http://steveridout.github.io/readlang-api/)
+
+(It's pretty basic at the moment.)
+
 ## Contents of this repo
 
 These are the important bits:
