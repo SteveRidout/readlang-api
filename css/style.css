@@ -45,10 +45,6 @@ h1 small {
 	margin: 0 auto;
 }
 
-.mainColumn h3 {
-	margin: 10px 20px;
-}
-
 #header {
 	margin: 0;
 	padding: 15px;
@@ -56,6 +52,14 @@ h1 small {
 	background-color: #193E8C;
 	color: #eef;
 }
+
+#header a {
+	color: #dde;
+}
+#header a:hover {
+	color: #fff;
+}
+
 /*h2#user {
 	position: absolute;
 

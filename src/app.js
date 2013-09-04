@@ -16,7 +16,7 @@ $(document).ready(function () {
 	readlang.user(function (data) {
 		user = data;
 
-		$('#user').text("Logged in to Readlang: " + user.username).append(' <button id="logout">logout</button>');
+		$('#user').text("Username: " + user.username).append(' <button id="logout">logout</button>');
 		$('#logout').click(logout);
 		var startGameButton = $('<button>Start Game!</button>').click(function () {
 			modalDialog.cancel();
