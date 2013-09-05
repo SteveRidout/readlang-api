@@ -2,7 +2,7 @@
 
 The API allows you to create web-based apps and games using the words from a user's Readlang account.
 
-__The API is currently an early alpha release, so expect changes, and please let me know if anything doesn't work.__
+__The API is currently an early alpha release, so expect changes, and please let me know if you have feedback or if anything doesn't work.__
 
 ## Example Game - Fill in the Blanks!
 

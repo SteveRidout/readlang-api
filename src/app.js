@@ -12,19 +12,28 @@ $(document).ready(function () {
 		});
 	};
 
-	var user;
+	var user,
+		languageSelector;
+
 	readlang.user(function (data) {
 		user = data;
 
 		$('#user').text("Username: " + user.username).append(' <button id="logout">logout</button>');
 		$('#logout').click(logout);
 		var startGameButton = $('<button>Start Game!</button>').click(function () {
+			var selectedLanguageName = languageSelector.find('option:selected').text();
 			modalDialog.cancel();
 
 			startGameButton.remove();
 
 			readlang.fetchWords(totalWords, function (data) {
 				userWords = data;
+
+				if (userWords.length === 0) {
+					alert('No words left to test in ' + selectedLanguageName +
+						' right now, go to readlang.com and translate some more words.');
+				}
+
 				_.each(userWords, function (userWord) {
 					console.log("got userword", userWord._id);
 
@@ -54,7 +63,7 @@ $(document).ready(function () {
 		readlang.request({
 			path: "/api/userLanguages",
 			success: function (userLanguages) {
-				var languageSelector = $('<select/>');
+				languageSelector = $('<select/>');
 				_.each(userLanguages, function (language) {
 					languageSelector.append('<option data-lang="' + language.code + '" title="' + language.english +
 						'">' + language.name + '</options>');
@@ -99,7 +108,9 @@ $(document).ready(function () {
 		currentNotDisplayedWords = [],
 		userWords,
 		playedWords = [],
-		timer;
+		timer,
+		score = 0,
+		gameFinished = false;
 
 	var addWord = function () {
 		console.log("adding word");
@@ -129,9 +140,7 @@ $(document).ready(function () {
 		$('#words').append(wordElement).append(' ');
 	};
 
-	var score = 0;
 	$('#score').text(score);
-	var gameFinished = false;
 
 	var addEmptyContexts = function () {
 		if (gameFinished) {
