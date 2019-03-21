@@ -1,4 +1,4 @@
-**Sorry, but this API is no longer supported**
+**Sorry, but this API is no longer supported.**
 
 # Readlang Words API (alpha version)
 
